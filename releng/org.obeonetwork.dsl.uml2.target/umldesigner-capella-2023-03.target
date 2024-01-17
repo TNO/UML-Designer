@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="UML Designer Capella-2023-03" sequenceNumber="1705499287">
+<target name="UML Designer Capella-2023-03" sequenceNumber="1705508691">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.eef.runtime" version="0.0.0"/>
@@ -80,6 +80,10 @@
       <unit id="org.eclipse.emf.compare.diagram.ide.ui.sirius" version="0.0.0"/>
       <unit id="org.eclipse.emf.compare.diagram.sirius" version="0.0.0"/>
       <repository id="EMF-Compare-3.3.21" location="https://download.eclipse.org/modeling/emf/compare/updates/releases/3.3/R202212280858/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.justj.openjdk.hotspot.jre.full.feature.group" version="0.0.0"/>
+      <repository id="JustJ-17.0.9" location="https://download.eclipse.org/justj/jres/17/updates/release/17.0.9"/>
     </location>
   </locations>
 </target>

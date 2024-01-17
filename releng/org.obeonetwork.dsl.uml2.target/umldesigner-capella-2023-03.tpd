@@ -30,3 +30,7 @@ location EMF-Compare-3.3.21 "https://download.eclipse.org/modeling/emf/compare/u
 	org.eclipse.emf.compare.diagram.ide.ui.sirius lazy
 	org.eclipse.emf.compare.diagram.sirius lazy
 }
+
+location JustJ-17.0.9 "https://download.eclipse.org/justj/jres/17/updates/release/17.0.9" {
+	org.eclipse.justj.openjdk.hotspot.jre.full.feature.group lazy
+}
