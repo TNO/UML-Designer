@@ -6,9 +6,6 @@
    <feature url="features/org.obeonetwork.dsl.uml2.core.runtime.feature_9.0.0.qualifier.jar" id="org.obeonetwork.dsl.uml2.core.runtime.feature" version="9.0.0.qualifier">
       <category name="Obeo Network"/>
    </feature>
-   <feature url="features/org.obeonetwork.dsl.uml2.core.runtime.sdk.feature_9.0.0.qualifier.jar" id="org.obeonetwork.dsl.uml2.core.runtime.sdk.feature" version="9.0.0.qualifier">
-      <category name="Obeo Network"/>
-   </feature>
    <feature id="org.obeonetwork.gmf.runtime.diagram.ui.extension.feature" version="0.0.0">
       <category name="Obeo Network"/>
    </feature>
