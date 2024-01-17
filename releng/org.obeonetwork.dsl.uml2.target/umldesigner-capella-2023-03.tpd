@@ -3,6 +3,13 @@ target "UML Designer Capella-2023-03"
 include "../org.obeonetwork.dsl.uml2.core.target/umlcoredesigner-capella-2023-03.tpd"
 with source, requirements
 
+location Eclipse-2023-03 "https://download.eclipse.org/releases/2023-03/" {
+	org.eclipse.platform.sdk lazy
+	org.eclipse.equinox.executable.feature.group lazy
+	org.eclipse.epp.mpc.feature.group lazy
+	org.eclipse.eef.ide lazy
+}
+
 location Amalgam-1.14.0 "https://download.eclipse.org/modeling/amalgam/updates/stable/1.14.0-S20230503/capella/" {
 	org.eclipse.amalgam.discovery.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
