@@ -58,6 +58,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 1.0
  */
+@SuppressWarnings("restriction")
 public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunchConfigurationTab {
 
     /** The last selected EE JRE settings key. */
@@ -91,7 +92,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#createControl(org.eclipse.swt.widgets.Composite)
      */
     public void createControl(Composite parent) {
@@ -112,7 +113,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * Creates the group containing the general options of the generation.
-     * 
+     *
      * @param composite
      *            The composite containing the group
      * @param font
@@ -120,9 +121,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
      */
     private void createGenerationGroup(Composite composite, Font font) {
         GridData gd;
-        Group generationGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.GenerationGroupName"), 3, 1,
-                GridData.FILL_HORIZONTAL);
+        Group generationGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.GenerationGroupName"), 3, 1, GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(generationGroup, SWT.NONE);
         GridLayout layout = new GridLayout(4, false);
         layout.marginWidth = 0;
@@ -134,8 +134,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
         comp.setLayoutData(gd);
 
         Label modelPathLabel = new Label(comp, SWT.NONE);
-        modelPathLabel.setText(UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.UMLModelPathLabel"));
+        modelPathLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.UMLModelPathLabel"));
 
         this.modelPathText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.modelPathText.setFont(composite.getFont());
@@ -149,8 +149,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             }
         });
 
-        final Button browseModelButton = createPushButton(comp, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.BrowseButtonName"), null);
+        final Button browseModelButton = createPushButton(comp, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.BrowseButtonName"), null);
         browseModelButton.addSelectionListener(new SelectionListener() {
             public void widgetDefaultSelected(SelectionEvent e) {
             }
@@ -158,8 +158,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             public void widgetSelected(SelectionEvent e) {
                 FilteredResourcesSelectionDialog dialog = new FilteredResourcesSelectionDialog(getShell(),
                         false, ResourcesPlugin.getWorkspace().getRoot(), IResource.FILE);
-                dialog.setTitle(UML2JavaMessages
-                        .getString("UML2JavaGeneralLaunchConfigurationTab.UMLModelDialogTitle"));
+                dialog.setTitle(UML2JavaMessages.getString(
+                        "UML2JavaGeneralLaunchConfigurationTab.UMLModelDialogTitle"));
                 dialog.setInitialPattern("*.uml");
                 dialog.open();
                 if (dialog.getResult() != null && dialog.getResult().length > 0) {
@@ -175,13 +175,13 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
                 updateLaunchConfigurationDialog();
             }
         });
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.UMLModelPathHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.UMLModelPathHelp"));
     }
 
     /**
      * Creates the group containing the Java options of the generation.
-     * 
+     *
      * @param composite
      *            the composite containing the group
      * @param font
@@ -189,9 +189,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
      */
     private void createJavaGroup(Composite composite, Font font) {
         GridData gd;
-        Group javaGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.JavaGroupName"), 3, 1,
-                GridData.FILL_HORIZONTAL);
+        Group javaGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.JavaGroupName"), 3, 1, GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(javaGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
         layout.marginWidth = 0;
@@ -204,8 +203,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
         // Default project name
         Label defaultProjectNameLabel = new Label(comp, SWT.NONE);
-        defaultProjectNameLabel.setText(UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.DefaultProjectNameLabel"));
+        defaultProjectNameLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.DefaultProjectNameLabel"));
 
         this.defaultProjectNameText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.defaultProjectNameText.setFont(composite.getFont());
@@ -220,13 +219,13 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.DefaultProjectNameHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.DefaultProjectNameHelp"));
 
         // Source folder path
         Label sourceFolderPathLabel = new Label(comp, SWT.NONE);
-        sourceFolderPathLabel.setText(UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.SourceFolderPathLabel"));
+        sourceFolderPathLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.SourceFolderPathLabel"));
 
         this.sourceFolderPathText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.sourceFolderPathText.setFont(composite.getFont());
@@ -241,13 +240,13 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.SourceFolderPathHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.SourceFolderPathHelp"));
 
         // Output folder path
         Label outputFolderPathLabel = new Label(comp, SWT.NONE);
-        outputFolderPathLabel.setText(UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.OutputFolderPathLabel"));
+        outputFolderPathLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.OutputFolderPathLabel"));
 
         this.outputFolderPathText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.outputFolderPathText.setFont(composite.getFont());
@@ -262,13 +261,13 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.OutputFolderPathHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.OutputFolderPathHelp"));
 
         // JRE Selection
         Label jreExecutionEnvironmentLabel = new Label(comp, SWT.NONE);
-        jreExecutionEnvironmentLabel.setText(UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.JREExecutionEnvironmentLabel"));
+        jreExecutionEnvironmentLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.JREExecutionEnvironmentLabel"));
 
         executionEnvJRECombo = new Combo(comp, SWT.READ_ONLY);
         executionEnvJRECombo.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, true, false));
@@ -279,7 +278,6 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
         IExecutionEnvironment[] fInstalledEEs = JavaRuntime.getExecutionEnvironmentsManager()
                 .getExecutionEnvironments();
         Arrays.sort(fInstalledEEs, new Comparator<IExecutionEnvironment>() {
-            @SuppressWarnings("unchecked")
             public int compare(IExecutionEnvironment arg0, IExecutionEnvironment arg1) {
                 return Policy.getComparator().compare(arg0.getId(), arg1.getId());
             }
@@ -321,13 +319,13 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaGeneralLaunchConfigurationTab.JREExecutionEnvironmentHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaGeneralLaunchConfigurationTab.JREExecutionEnvironmentHelp"));
     }
 
     /**
      * Returns the last selected EE JRE.
-     * 
+     *
      * @return The last selected EE JRE.
      */
     private String getLastSelectedEE() {
@@ -337,7 +335,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * Returns the default execution environment name.
-     * 
+     *
      * @return The default execution environment name.
      */
     private String getDefaultEEName() {
@@ -388,8 +386,8 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
             if (text != null && text.length() > 0) {
                 IFile model = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(text));
                 if (model != null && !model.exists()) {
-                    this.setErrorMessage(UML2JavaMessages
-                            .getString("UML2JavaGeneralLaunchConfigurationTab.MissingInputModel"));
+                    this.setErrorMessage(UML2JavaMessages.getString(
+                            "UML2JavaGeneralLaunchConfigurationTab.MissingInputModel"));
                 }
             }
         }
@@ -397,22 +395,22 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
         // Check the input / output folder path's length
         if (this.sourceFolderPathText != null && this.sourceFolderPathText.getText() != null
                 && this.sourceFolderPathText.getText().trim().length() == 0) {
-            this.setErrorMessage(UML2JavaMessages
-                    .getString("UML2JavaGeneralLaunchConfigurationTab.MissingSourceFolderPath"));
+            this.setErrorMessage(UML2JavaMessages.getString(
+                    "UML2JavaGeneralLaunchConfigurationTab.MissingSourceFolderPath"));
         } else if (this.outputFolderPathText != null && this.outputFolderPathText.getText() != null
                 && this.outputFolderPathText.getText().trim().length() == 0) {
-            this.setErrorMessage(UML2JavaMessages
-                    .getString("UML2JavaGeneralLaunchConfigurationTab.MissingOutputFolderPath"));
+            this.setErrorMessage(UML2JavaMessages.getString(
+                    "UML2JavaGeneralLaunchConfigurationTab.MissingOutputFolderPath"));
         } else if (this.defaultProjectNameText != null && this.defaultProjectNameText.getText() != null
                 && this.defaultProjectNameText.getText().trim().length() == 0) {
-            this.setErrorMessage(UML2JavaMessages
-                    .getString("UML2JavaGeneralLaunchConfigurationTab.MissingDefaultProjectName"));
+            this.setErrorMessage(UML2JavaMessages.getString(
+                    "UML2JavaGeneralLaunchConfigurationTab.MissingDefaultProjectName"));
         }
     }
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#setDefaults(org.eclipse.debug.core.ILaunchConfigurationWorkingCopy)
      */
     public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
@@ -453,7 +451,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#initializeFrom(org.eclipse.debug.core.ILaunchConfiguration)
      */
     public void initializeFrom(ILaunchConfiguration configuration) {
@@ -490,7 +488,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#performApply(org.eclipse.debug.core.ILaunchConfigurationWorkingCopy)
      */
     public void performApply(ILaunchConfigurationWorkingCopy configuration) {
@@ -517,7 +515,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.AbstractLaunchConfigurationTab#isValid(org.eclipse.debug.core.ILaunchConfiguration)
      */
     @Override
@@ -557,7 +555,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchConfigurationTab#getName()
      */
     public String getName() {
@@ -566,7 +564,7 @@ public class UML2JavaGeneralLaunchConfigurationTab extends AbstractUML2JavaLaunc
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.AbstractLaunchConfigurationTab#getImage()
      */
     @Override

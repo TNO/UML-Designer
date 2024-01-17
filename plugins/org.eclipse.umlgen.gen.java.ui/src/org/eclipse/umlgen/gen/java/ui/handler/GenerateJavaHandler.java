@@ -34,6 +34,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
 /**
  * This generates C code from elements of a UML model.
  */
+@SuppressWarnings("restriction")
 public class GenerateJavaHandler extends AbstractHandler {
 
     /**

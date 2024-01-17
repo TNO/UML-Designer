@@ -31,6 +31,7 @@ import com.google.common.collect.Lists;
  *
  * @author Melanie Bats <a href="mailto:melanie.bats@obeo.fr">melanie.bats@obeo.fr</a>
  */
+@SuppressWarnings("restriction")
 public class PackageContainmentServices extends AbstractDiagramServices {
 	/**
 	 * Get all the packageable elements available in the semantic resources.
@@ -69,7 +70,7 @@ public class PackageContainmentServices extends AbstractDiagramServices {
 
 			MessageDialog.openError(Workbench.getInstance().getDisplay().getActiveShell(), "Selection Error",
 					selName + " is an ancestor of " + contName + ", it could not be moved in " + contName
-							+ ".");
+					+ ".");
 			return false;
 		}
 		return true;

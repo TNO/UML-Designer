@@ -61,6 +61,7 @@ import com.google.common.collect.Sets;
  *
  * @author Melanie Bats <a href="mailto:melanie.bats@obeo.fr">melanie.bats@obeo.fr</a>
  */
+@SuppressWarnings("restriction")
 public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.SelectionDialog {
 
 	private class SelectionDialogTreeContentProvider extends AdapterFactoryContentProvider {
@@ -137,20 +138,6 @@ public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.Selectio
 	}
 
 	/**
-	 * Returns the adapter factory used by this viewer.
-	 *
-	 * @return The adapter factory used by this viewer.
-	 */
-	private static AdapterFactory getAdapterFactory() {
-		final List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		factories.add(new UMLItemProviderAdapterFactory());
-		factories.add(new ResourceItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ReflectiveItemProviderAdapterFactory());
-		return new ComposedAdapterFactory(factories);
-	}
-
-	/**
 	 * A String used to identify the Text allowing user to type regular expression (can be used for testing).
 	 */
 	public static final String REGEXP_TOOL_TIP = "Expression that will be used to filer elements by name (for example 'abc', 'a?c', '*c'...)"; //$NON-NLS-1$
@@ -164,6 +151,20 @@ public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.Selectio
 	 * The String explaining to user how to use regular expressions.
 	 */
 	private static final String REGEXP_EXPLANATIONS = "? = any character, * = any String"; //$NON-NLS-1$
+
+	/**
+	 * Returns the adapter factory used by this viewer.
+	 *
+	 * @return The adapter factory used by this viewer.
+	 */
+	private static AdapterFactory getAdapterFactory() {
+		final List<AdapterFactory> factories = new ArrayList<>();
+		factories.add(new UMLItemProviderAdapterFactory());
+		factories.add(new ResourceItemProviderAdapterFactory());
+		factories.add(new EcoreItemProviderAdapterFactory());
+		factories.add(new ReflectiveItemProviderAdapterFactory());
+		return new ComposedAdapterFactory(factories);
+	}
 
 	private final SelectionDialogTreeLabelProvider labelProvider;
 
@@ -248,6 +249,7 @@ public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.Selectio
 		// Step 4 : add modify listener to this textZone
 		regularExpressionText.addModifyListener(new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				final String typedRegex = ((Text)e.getSource()).getText();
 				// Each time the regular expression is modified, the
@@ -274,6 +276,7 @@ public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.Selectio
 				setResult(Arrays.asList(array));
 			}
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				doSelectionChanged(((IStructuredSelection)event.getSelection()).toArray());
 			}
@@ -293,7 +296,7 @@ public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.Selectio
 	}
 
 	private Collection<EObject> getAllRootsInSessions() {
-		final Collection<EObject> roots = new ArrayList<EObject>();
+		final Collection<EObject> roots = new ArrayList<>();
 		for (final Session session : SessionManager.INSTANCE.getSessions()) {
 			for (final Resource childRes : session.getSemanticResources()) {
 				for (final EObject eObject : childRes.getContents()) {
@@ -333,6 +336,7 @@ public class ModelElementSelectionDialog extends org.eclipse.ui.dialogs.Selectio
 			return true;
 		}
 		return Iterables.any(Arrays.asList(contentProvider.getChildren(element)), new Predicate<Object>() {
+			@Override
 			public boolean apply(Object input) {
 				return isOrHasDescendant(input, pred);
 			}

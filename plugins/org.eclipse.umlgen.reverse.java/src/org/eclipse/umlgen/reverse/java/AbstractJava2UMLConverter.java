@@ -369,6 +369,7 @@ public abstract class AbstractJava2UMLConverter {
      * @param fragment
      * @param isAnnotatedOnly
      */
+    @SuppressWarnings("restriction")
     protected void generateActivities(Package packageObject, IPackageFragment fragment,
             boolean isAnnotatedOnly) {
         try {
@@ -518,7 +519,8 @@ public abstract class AbstractJava2UMLConverter {
      * @return The UML2 model.
      * @throws CoreException
      */
-    private Model doConvertion(IPackageFragment packageModel, ActivityGeneration actGen) throws CoreException {
+    private Model doConvertion(IPackageFragment packageModel, ActivityGeneration actGen)
+            throws CoreException {
         // Let's try to find the package before creating a new one
         Model model = null;
         for (EObject eObject : emfResource.getContents()) {
@@ -1124,9 +1126,7 @@ public abstract class AbstractJava2UMLConverter {
             if (element instanceof Interface) {
                 LogUtils.logEntering(element, "Creating associations");
                 Interface interfaceObject = (Interface)element;
-                Iterator<Property> itProp = interfaceObject.getOwnedAttributes().iterator();
-                while (itProp.hasNext()) {
-                    Property property = itProp.next();
+                for (Property property : interfaceObject.getOwnedAttributes()) {
                     Type targetType = property.getType();
                     if (targetType instanceof StructuredClassifier || targetType instanceof Interface) {
                         if (!(targetType.getOwner() instanceof TemplateParameter)) {
@@ -1897,8 +1897,8 @@ public abstract class AbstractJava2UMLConverter {
             if (mainClass != null && Collection.class.isAssignableFrom(mainClass)) {
                 isCollection = true;
                 fieldTypeWithoutArray = typeArguments[0];
-                String fieldTypeWithoutArrayName = Signature.toString(Signature
-                        .getTypeErasure(fieldTypeWithoutArray));
+                String fieldTypeWithoutArrayName = Signature.toString(Signature.getTypeErasure(
+                        fieldTypeWithoutArray));
                 fieldType = findTemplateParameter(element, fieldTypeWithoutArrayName);
                 if (fieldType == null) {
                     fieldTypeWithoutArrayName = resolveTypeInContext(element, field.getDeclaringType(),
@@ -1944,12 +1944,12 @@ public abstract class AbstractJava2UMLConverter {
                     .getType(), UMLFactory.eINSTANCE.createLiteralString().eClass());
             defaultValue.setValue((String)field.getConstant());
         } else if (field.getConstant() instanceof Integer) {
-            LiteralInteger defaultValue = (LiteralInteger)propertyObject.createDefaultValue("",
-                    propertyObject.getType(), UMLFactory.eINSTANCE.createLiteralInteger().eClass());
+            LiteralInteger defaultValue = (LiteralInteger)propertyObject.createDefaultValue("", propertyObject
+                    .getType(), UMLFactory.eINSTANCE.createLiteralInteger().eClass());
             defaultValue.setValue((Integer)field.getConstant());
         } else if (field.getConstant() instanceof Boolean) {
-            LiteralBoolean defaultValue = (LiteralBoolean)propertyObject.createDefaultValue("",
-                    propertyObject.getType(), UMLFactory.eINSTANCE.createLiteralBoolean().eClass());
+            LiteralBoolean defaultValue = (LiteralBoolean)propertyObject.createDefaultValue("", propertyObject
+                    .getType(), UMLFactory.eINSTANCE.createLiteralBoolean().eClass());
             defaultValue.setValue((Boolean)field.getConstant());
         } else if (affectation != null && arrayCount == 0) {
             LiteralString defaultValue = (LiteralString)propertyObject.createDefaultValue("", propertyObject
@@ -2274,8 +2274,8 @@ public abstract class AbstractJava2UMLConverter {
             Resource resource = resourceSet.getResource(uri, true);
 
             // Get the first (should be only) package from it
-            vPackage = (Package)EcoreUtil
-                    .getObjectByType(resource.getContents(), UMLPackage.Literals.PACKAGE);
+            vPackage = (Package)EcoreUtil.getObjectByType(resource.getContents(),
+                    UMLPackage.Literals.PACKAGE);
         } catch (WrappedException we) {
             LogUtils.logThrowable(we);
             throwCoreException(we.getMessage());

@@ -28,6 +28,7 @@ import org.eclipse.umlgen.gen.java.ui.launch.IUML2JavaUIConstants;
 import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
 
 /** Utility class to manage launch configurations from menu and properties page. */
+@SuppressWarnings("restriction")
 public final class ConfigurationServices {
 
     /**

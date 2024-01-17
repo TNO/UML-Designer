@@ -44,6 +44,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
 /**
  * Properties page to select the launch configuration for the Java generation.
  */
+@SuppressWarnings("restriction")
 public class LaunchConfigurationPropertiesPage extends PropertyPage {
 
     /** The combo to select a launch configuration. */

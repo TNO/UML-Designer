@@ -42,6 +42,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 1.0
  */
+@SuppressWarnings("restriction")
 public class LaunchShortcut implements ILaunchShortcut {
 
     /**
@@ -51,7 +52,7 @@ public class LaunchShortcut implements ILaunchShortcut {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.jface.viewers.ISelection,
      *      java.lang.String)
      */
@@ -59,8 +60,8 @@ public class LaunchShortcut implements ILaunchShortcut {
         if (selection instanceof IStructuredSelection) {
             List<?> list = ((IStructuredSelection)selection).toList();
             for (Object object : list) {
-                if (object instanceof IFile && ((IFile)object).getFileExtension() != null
-                        && "uml".equals(((IFile)object).getFileExtension())) {
+                if (object instanceof IFile && ((IFile)object).getFileExtension() != null && "uml".equals(
+                        ((IFile)object).getFileExtension())) {
                     this.file = (IFile)object;
                     break;
                 }
@@ -74,7 +75,7 @@ public class LaunchShortcut implements ILaunchShortcut {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.ui.ILaunchShortcut#launch(org.eclipse.ui.IEditorPart, java.lang.String)
      */
     public void launch(IEditorPart editor, String mode) {
@@ -93,7 +94,7 @@ public class LaunchShortcut implements ILaunchShortcut {
 
     /**
      * Launches the generation.
-     * 
+     *
      * @param mode
      *            The generation mode (run always)
      */
@@ -112,7 +113,7 @@ public class LaunchShortcut implements ILaunchShortcut {
 
     /**
      * Returns a newly created launch configuration for the available ".uml" models.
-     * 
+     *
      * @return A newly created launch configuration for the available ".uml" models.
      */
     @SuppressWarnings("deprecation")
@@ -151,7 +152,7 @@ public class LaunchShortcut implements ILaunchShortcut {
 
     /**
      * Returns the first UML to Java launch configuration using all the selected ".uml" models.
-     * 
+     *
      * @return The first UML to Java launch configuration using all the selected ".uml" models.
      */
     protected ILaunchConfiguration findLaunchConfiguration() {

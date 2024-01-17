@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
  */
 public class MoveUpElementSwitch extends UMLSwitch<Boolean> {
 
-	private static Boolean success = new Boolean(true);
+	private static Boolean success = Boolean.TRUE;
 
 	@Override
 	public Boolean caseEnumerationLiteral(EnumerationLiteral enumerationLiteral) {

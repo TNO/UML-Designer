@@ -29,7 +29,6 @@ import org.osgi.framework.BundleContext;
  *
  * @author Gonzague Reydet <a href="mailto:gonzague.reydet@obeo.fr">gonzague.reydet@obeo.fr</a>
  */
-@SuppressWarnings("restriction")
 public class UMLDesignerPlugin extends AbstractUIPlugin {
 
 	/**
@@ -90,7 +89,7 @@ public class UMLDesignerPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		viewpoints = new HashSet<Viewpoint>();
+		viewpoints = new HashSet<>();
 		viewpoints.addAll(
 				ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/uml2.odesign")); //$NON-NLS-1$
 		notifWhenSessionAreCreated = new SessionManagerListener.Stub() {

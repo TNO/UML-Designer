@@ -39,6 +39,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 2.0
  */
+@SuppressWarnings("restriction")
 public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchConfigurationTab {
 
     /**
@@ -107,9 +108,8 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
      */
     private void createCollectionGroup(Composite composite, Font font) {
         GridData gd;
-        Group collectionsGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.CollectionsGroupName"), 3, 1,
-                GridData.FILL_HORIZONTAL);
+        Group collectionsGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.CollectionsGroupName"), 3, 1, GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(collectionsGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
         layout.marginWidth = 0;
@@ -122,8 +122,8 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
 
         // Ordered and unique
         Label orderedAndUniqueLabel = new Label(comp, SWT.NONE);
-        orderedAndUniqueLabel.setText(UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.OrderedAndUniqueLabel"));
+        orderedAndUniqueLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.OrderedAndUniqueLabel"));
 
         this.orderedAndUniqueText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.orderedAndUniqueText.setFont(composite.getFont());
@@ -138,13 +138,13 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.OrderedAndUniqueHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.OrderedAndUniqueHelp"));
 
         // Ordered and not unique
         Label orderedAndNotUniqueLabel = new Label(comp, SWT.NONE);
-        orderedAndNotUniqueLabel.setText(UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.OrderedAndNotUniqueLabel"));
+        orderedAndNotUniqueLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.OrderedAndNotUniqueLabel"));
 
         this.orderedAndNotUniqueText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.orderedAndNotUniqueText.setFont(composite.getFont());
@@ -159,13 +159,13 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.OrderedAndNotUniqueHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.OrderedAndNotUniqueHelp"));
 
         // Not ordered and unique
         Label notOrderedAndUniqueLabel = new Label(comp, SWT.NONE);
-        notOrderedAndUniqueLabel.setText(UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.NotOrderedAndUniqueLabel"));
+        notOrderedAndUniqueLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.NotOrderedAndUniqueLabel"));
 
         this.notOrderedAndUniqueText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.notOrderedAndUniqueText.setFont(composite.getFont());
@@ -180,13 +180,13 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.NotOrderedAndUniqueHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.NotOrderedAndUniqueHelp"));
 
         // Not ordered and not unique
         Label notOrderedAndNotUniqueLabel = new Label(comp, SWT.NONE);
-        notOrderedAndNotUniqueLabel.setText(UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.NotOrderedAndNotUniqueLabel"));
+        notOrderedAndNotUniqueLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.NotOrderedAndNotUniqueLabel"));
 
         this.notOrderedAndNotUniqueText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.notOrderedAndNotUniqueText.setFont(composite.getFont());
@@ -201,8 +201,8 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.NotOrderedAndNotUniqueHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.NotOrderedAndNotUniqueHelp"));
     }
 
     /**
@@ -215,9 +215,8 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
      */
     private void createTypesToIgnoreGroup(Composite composite, Font font) {
         GridData gd;
-        Group generationGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreGroupName"), 3, 1,
-                GridData.FILL_HORIZONTAL);
+        Group generationGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreGroupName"), 3, 1, GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(generationGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
         layout.marginWidth = 0;
@@ -234,11 +233,10 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 2;
         this.ignoreJavaTypesDuringGenerationAndImport.setLayoutData(gd);
-        this.ignoreJavaTypesDuringGenerationAndImport
-                .setText(UML2JavaMessages
-                        .getString("UML2JavaTypeLaunchConfigurationTab.IgnoreJavaTypesDuringGenerationAndImportLabel"));
-        this.ignoreJavaTypesDuringGenerationAndImport
-                .setSelection(IUML2JavaConstants.Default.DEFAULT_IGNORE_JAVA_TYPES_DURING_GENERATION_AND_IMPORT);
+        this.ignoreJavaTypesDuringGenerationAndImport.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.IgnoreJavaTypesDuringGenerationAndImportLabel"));
+        this.ignoreJavaTypesDuringGenerationAndImport.setSelection(
+                IUML2JavaConstants.Default.DEFAULT_IGNORE_JAVA_TYPES_DURING_GENERATION_AND_IMPORT);
         this.ignoreJavaTypesDuringGenerationAndImport.addSelectionListener(new SelectionListener() {
             public void widgetSelected(SelectionEvent e) {
                 update();
@@ -248,50 +246,50 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
                 update();
             }
         });
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.IgnoreJavaTypesDuringGenerationAndImportHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.IgnoreJavaTypesDuringGenerationAndImportHelp"));
 
         // Types to ignore during the generation
         Label typesToIgnoreDuringTheGenerationLabel = new Label(comp, SWT.NONE);
-        typesToIgnoreDuringTheGenerationLabel.setText(UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheGenerationLabel"));
+        typesToIgnoreDuringTheGenerationLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheGenerationLabel"));
 
         this.typesToIgnoreDuringTheGenerationText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.typesToIgnoreDuringTheGenerationText.setFont(composite.getFont());
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.typesToIgnoreDuringTheGenerationText.setLayoutData(gd);
-        this.typesToIgnoreDuringTheGenerationText
-                .setText(IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_GENERATION);
+        this.typesToIgnoreDuringTheGenerationText.setText(
+                IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_GENERATION);
         this.typesToIgnoreDuringTheGenerationText.addModifyListener(new ModifyListener() {
             public void modifyText(ModifyEvent e) {
                 update();
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheGenerationHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheGenerationHelp"));
 
         // Types to ignore during the import
         Label typesToIgnoreDuringTheImportLabel = new Label(comp, SWT.NONE);
-        typesToIgnoreDuringTheImportLabel.setText(UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheImportLabel"));
+        typesToIgnoreDuringTheImportLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheImportLabel"));
 
         this.typesToIgnoreDuringTheImportText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.typesToIgnoreDuringTheImportText.setFont(composite.getFont());
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.typesToIgnoreDuringTheImportText.setLayoutData(gd);
-        this.typesToIgnoreDuringTheImportText
-                .setText(IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_IMPORTS);
+        this.typesToIgnoreDuringTheImportText.setText(
+                IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_IMPORTS);
         this.typesToIgnoreDuringTheImportText.addModifyListener(new ModifyListener() {
             public void modifyText(ModifyEvent e) {
                 update();
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheImportHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaTypeLaunchConfigurationTab.TypesToIgnoreDuringTheImportHelp"));
     }
 
     /**
@@ -335,32 +333,32 @@ public class UML2JavaTypeLaunchConfigurationTab extends AbstractUML2JavaLaunchCo
         configuration.setAttribute(IUML2JavaConstants.NOT_ORDERED_NOT_UNIQUE_TYPE,
                 IUML2JavaConstants.Default.DEFAULT_NOT_ORDERED_NOT_UNIQUE);
         if (this.notOrderedAndNotUniqueText != null) {
-            this.notOrderedAndNotUniqueText
-                    .setText(IUML2JavaConstants.Default.DEFAULT_NOT_ORDERED_NOT_UNIQUE);
+            this.notOrderedAndNotUniqueText.setText(
+                    IUML2JavaConstants.Default.DEFAULT_NOT_ORDERED_NOT_UNIQUE);
         }
 
         // Ignore Java types
         configuration.setAttribute(IUML2JavaConstants.IGNORE_JAVA_TYPES_DURING_GENERATION_AND_IMPORT,
                 IUML2JavaConstants.Default.DEFAULT_IGNORE_JAVA_TYPES_DURING_GENERATION_AND_IMPORT);
         if (this.ignoreJavaTypesDuringGenerationAndImport != null) {
-            this.ignoreJavaTypesDuringGenerationAndImport
-                    .setSelection(IUML2JavaConstants.Default.DEFAULT_IGNORE_JAVA_TYPES_DURING_GENERATION_AND_IMPORT);
+            this.ignoreJavaTypesDuringGenerationAndImport.setSelection(
+                    IUML2JavaConstants.Default.DEFAULT_IGNORE_JAVA_TYPES_DURING_GENERATION_AND_IMPORT);
         }
 
         // Types to ignore during the generation
         configuration.setAttribute(IUML2JavaConstants.TYPES_TO_IGNORE_DURING_GENERATION,
                 IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_GENERATION);
         if (this.typesToIgnoreDuringTheGenerationText != null) {
-            this.typesToIgnoreDuringTheGenerationText
-                    .setText(IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_GENERATION);
+            this.typesToIgnoreDuringTheGenerationText.setText(
+                    IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_GENERATION);
         }
 
         // Types to ignore during the import
         configuration.setAttribute(IUML2JavaConstants.TYPES_TO_IGNORE_DURING_IMPORTS,
                 IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_IMPORTS);
         if (this.typesToIgnoreDuringTheImportText != null) {
-            this.typesToIgnoreDuringTheImportText
-                    .setText(IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_IMPORTS);
+            this.typesToIgnoreDuringTheImportText.setText(
+                    IUML2JavaConstants.Default.DEFAULT_TYPES_TO_IGNORE_DURING_IMPORTS);
         }
     }
 

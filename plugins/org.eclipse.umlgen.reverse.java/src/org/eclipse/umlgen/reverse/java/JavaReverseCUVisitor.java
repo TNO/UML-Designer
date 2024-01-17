@@ -246,8 +246,8 @@ public class JavaReverseCUVisitor extends ASTVisitor {
         }
 
         boolean ok1 = node.getParent() instanceof IfStatement;
-        boolean ok2 = node.getParent() instanceof Block
-                && node.getParent().getParent() instanceof IfStatement;
+        boolean ok2 = node.getParent() instanceof Block && node.getParent()
+                .getParent() instanceof IfStatement;
         boolean dolink = true;
 
         if (node instanceof Statement && (ok1 || ok2)) {
@@ -278,8 +278,8 @@ public class JavaReverseCUVisitor extends ASTVisitor {
             int nelse = elsestat.size();
 
             // Link if / else branch to correct decision node
-            if (choiceThenFMap != null && choiceThenFMap.containsKey(parent)
-                    && choiceThenFMap.get(parent).equals(node)) {
+            if (choiceThenFMap != null && choiceThenFMap.containsKey(parent) && choiceThenFMap.get(parent)
+                    .equals(node)) {
                 ActivityNode source = innerExitMap.get(choiceThenFMap.get(parent));
                 ActivityNode target = innerEntryMap.get(node);
                 if (source != null && target != null) {
@@ -289,8 +289,8 @@ public class JavaReverseCUVisitor extends ASTVisitor {
                 choiceThenFMap.remove(node);
                 dolink = false;
 
-            } else if (choiceElseFMap != null && choiceElseFMap.containsKey(parent)
-                    && choiceElseFMap.get(parent).equals(node)) {
+            } else if (choiceElseFMap != null && choiceElseFMap.containsKey(parent) && choiceElseFMap.get(
+                    parent).equals(node)) {
                 ActivityNode source = innerExitMap.get(choiceElseFMap.get(parent));
                 ActivityNode target = innerEntryMap.get(node);
                 if (source != null && target != null) {
@@ -526,7 +526,7 @@ public class JavaReverseCUVisitor extends ASTVisitor {
 
         return ret;
     }; // end visitMethodDeclaration
-    // return true = visit all inner nodes
+       // return true = visit all inner nodes
 
     /**
      * ctrlParamTypes : check a list of parameter have expected type (control on type name).
@@ -553,7 +553,7 @@ public class JavaReverseCUVisitor extends ASTVisitor {
 
         for (int ii = 0; ii < paramNames.size(); ii++) {
             Parameter pp = pset.get(ii);
-            if (pp != null || pp.getType() != null) {
+            if (pp != null && pp.getType() != null) {
                 String typename = pp.getType().getName();
                 if (!typename.equals(paramNames.get(ii))) {
                     pnok = false;
@@ -1055,8 +1055,8 @@ public class JavaReverseCUVisitor extends ASTVisitor {
             // parentStatements does not contains lastStatement any more
             if (node.getParent().getNodeType() == ASTNode.IF_STATEMENT) {
                 IfStatement parent = (IfStatement)node.getParent();
-                if (choiceMap.containsKey(parent) && parent.getElseStatement() != null
-                        && parent.getElseStatement().equals(node)) {
+                if (choiceMap.containsKey(parent) && parent.getElseStatement() != null && parent
+                        .getElseStatement().equals(node)) {
                     sourceNode = choiceMap.get(parent);
                     choiceMap.remove(parent);
                     if (lastGuard == null) {
@@ -1064,8 +1064,8 @@ public class JavaReverseCUVisitor extends ASTVisitor {
                     }
                 }
             }
-            if (node.getParent().getNodeType() == ASTNode.BLOCK
-                    && node.getParent().getParent().getNodeType() == ASTNode.IF_STATEMENT) {
+            if (node.getParent().getNodeType() == ASTNode.BLOCK && node.getParent().getParent()
+                    .getNodeType() == ASTNode.IF_STATEMENT) {
                 IfStatement parent = (IfStatement)node.getParent().getParent();
                 Block block;
 
@@ -1077,8 +1077,8 @@ public class JavaReverseCUVisitor extends ASTVisitor {
                 } else {
                     block = (Block)parent.getElseStatement();
                 }
-                if (choiceMap.containsKey(parent) && block != null && block.statements().size() > 0
-                        && block.statements().get(0).equals(node)) {
+                if (choiceMap.containsKey(parent) && block != null && block.statements().size() > 0 && block
+                        .statements().get(0).equals(node)) {
                     sourceNode = choiceMap.get(parent);
                     choiceMap.remove(parent);
                     if (lastGuard == null) {

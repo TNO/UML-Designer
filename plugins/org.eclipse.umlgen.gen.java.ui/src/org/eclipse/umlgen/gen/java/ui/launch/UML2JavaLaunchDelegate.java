@@ -38,11 +38,12 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 1.0
  */
+@SuppressWarnings("restriction")
 public class UML2JavaLaunchDelegate implements ILaunchConfigurationDelegate {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.core.model.ILaunchConfigurationDelegate#launch(org.eclipse.debug.core.ILaunchConfiguration,
      *      java.lang.String, org.eclipse.debug.core.ILaunch, org.eclipse.core.runtime.IProgressMonitor)
      */
@@ -88,7 +89,7 @@ public class UML2JavaLaunchDelegate implements ILaunchConfigurationDelegate {
 
     /**
      * Creates the configuration holder from the launch configuration.
-     * 
+     *
      * @param configuration
      *            The launch configuration
      * @return The configuration holder from the launch configuration.

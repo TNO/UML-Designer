@@ -25,6 +25,7 @@ import org.eclipse.umlgen.gen.java.main.Uml2java;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 0.1
  */
+@SuppressWarnings("restriction")
 public class GenerateAll {
 
     /**
@@ -44,7 +45,7 @@ public class GenerateAll {
 
     /**
      * Constructor.
-     * 
+     *
      * @param modelURI
      *            is the URI of the model.
      * @param targetFolder
@@ -60,7 +61,7 @@ public class GenerateAll {
 
     /**
      * Launches the generation.
-     * 
+     *
      * @param monitor
      *            This will be used to display progress information to the user.
      * @throws IOException

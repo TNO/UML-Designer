@@ -26,11 +26,12 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 1.0
  */
+@SuppressWarnings("restriction")
 public class UML2JavaSourceLookupParticipant extends AbstractSourceLookupParticipant {
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#getSourceName(java.lang.Object)
      */
     public String getSourceName(Object object) throws CoreException {
@@ -52,7 +53,7 @@ public class UML2JavaSourceLookupParticipant extends AbstractSourceLookupPartici
 
     /**
      * {@inheritDoc}
-     * 
+     *
      * @see org.eclipse.debug.core.sourcelookup.AbstractSourceLookupParticipant#findSourceElements(java.lang.Object)
      */
     @Override

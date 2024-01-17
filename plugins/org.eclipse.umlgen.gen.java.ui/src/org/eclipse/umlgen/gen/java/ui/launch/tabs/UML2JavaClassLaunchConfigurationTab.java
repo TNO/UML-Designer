@@ -39,6 +39,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 2.0
  */
+@SuppressWarnings("restriction")
 public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchConfigurationTab {
 
     /**
@@ -118,9 +119,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
      */
     private void createGenerationGroup(Composite composite, Font font) {
         GridData gd;
-        Group generationGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerationGroupName"), 3, 1,
-                GridData.FILL_HORIZONTAL);
+        Group generationGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerationGroupName"), 3, 1, GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(generationGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
         layout.marginWidth = 0;
@@ -133,16 +133,16 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
 
         // Packages to ignore during the generation
         Label packagesToIgnoreDuringTheGenerationLabel = new Label(comp, SWT.NONE);
-        packagesToIgnoreDuringTheGenerationLabel.setText(UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.PackagesToIgnoreDuringTheGenerationLabel"));
+        packagesToIgnoreDuringTheGenerationLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.PackagesToIgnoreDuringTheGenerationLabel"));
 
         this.packagesToIgnoreDuringTheGenerationText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.packagesToIgnoreDuringTheGenerationText.setFont(composite.getFont());
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.packagesToIgnoreDuringTheGenerationText.setLayoutData(gd);
-        this.packagesToIgnoreDuringTheGenerationText
-                .setText(IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_GENERATION);
+        this.packagesToIgnoreDuringTheGenerationText.setText(
+                IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_GENERATION);
         this.packagesToIgnoreDuringTheGenerationText.addModifyListener(new ModifyListener() {
 
             public void modifyText(ModifyEvent e) {
@@ -150,21 +150,21 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.PackagesToIgnoreDuringTheGenerationHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.PackagesToIgnoreDuringTheGenerationHelp"));
 
         // Packages to ignore during the imports
         Label packagesToIgnoreDuringTheImportLabel = new Label(comp, SWT.NONE);
-        packagesToIgnoreDuringTheImportLabel.setText(UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.PackagesToIgnoreDuringTheImportLabel"));
+        packagesToIgnoreDuringTheImportLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.PackagesToIgnoreDuringTheImportLabel"));
 
         this.packagesToIgnoreDuringTheImportText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.packagesToIgnoreDuringTheImportText.setFont(composite.getFont());
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.packagesToIgnoreDuringTheImportText.setLayoutData(gd);
-        this.packagesToIgnoreDuringTheImportText
-                .setText(IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_IMPORTS);
+        this.packagesToIgnoreDuringTheImportText.setText(
+                IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_IMPORTS);
         this.packagesToIgnoreDuringTheImportText.addModifyListener(new ModifyListener() {
 
             public void modifyText(ModifyEvent e) {
@@ -172,8 +172,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.TypessToIgnoreDuringTheImportHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.TypessToIgnoreDuringTheImportHelp"));
     }
 
     /**
@@ -186,9 +186,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
      */
     private void createAccessorsGroup(Composite composite, Font font) {
         GridData gd;
-        Group accessorsGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.AccessorsGroupName"), 3, 1,
-                GridData.FILL_HORIZONTAL);
+        Group accessorsGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.AccessorsGroupName"), 3, 1, GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(accessorsGroup, SWT.NONE);
         GridLayout layout = new GridLayout(2, false);
         layout.marginWidth = 0;
@@ -205,10 +204,10 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.generateGettersAndSettersButton.setLayoutData(gd);
-        this.generateGettersAndSettersButton.setText(UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateGettersAndSettersLabel"));
-        this.generateGettersAndSettersButton
-                .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_AND_SETTERS);
+        this.generateGettersAndSettersButton.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateGettersAndSettersLabel"));
+        this.generateGettersAndSettersButton.setSelection(
+                IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_AND_SETTERS);
         this.generateGettersAndSettersButton.addSelectionListener(new SelectionListener() {
             public void widgetSelected(SelectionEvent e) {
                 update();
@@ -219,8 +218,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateGettersAndSettersHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateGettersAndSettersHelp"));
 
         // Generate getters for collections
         this.generateGettersForCollectionsButton = new Button(comp, SWT.CHECK);
@@ -228,10 +227,10 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.generateGettersForCollectionsButton.setLayoutData(gd);
-        this.generateGettersForCollectionsButton.setText(UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateGettersForCollectionsLabel"));
-        this.generateGettersForCollectionsButton
-                .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_COLLECTIONS);
+        this.generateGettersForCollectionsButton.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateGettersForCollectionsLabel"));
+        this.generateGettersForCollectionsButton.setSelection(
+                IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_COLLECTIONS);
         this.generateGettersForCollectionsButton.addSelectionListener(new SelectionListener() {
             public void widgetSelected(SelectionEvent e) {
                 update();
@@ -242,8 +241,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateGettersForCollectionsHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateGettersForCollectionsHelp"));
 
         // Generate setters for collections
         this.generateSettersForCollectionsButton = new Button(comp, SWT.CHECK);
@@ -251,10 +250,10 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.generateSettersForCollectionsButton.setLayoutData(gd);
-        this.generateSettersForCollectionsButton.setText(UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateSettersForCollectionsLabel"));
-        this.generateSettersForCollectionsButton
-                .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_SETTERS_COLLECTIONS);
+        this.generateSettersForCollectionsButton.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateSettersForCollectionsLabel"));
+        this.generateSettersForCollectionsButton.setSelection(
+                IUML2JavaConstants.Default.DEFAULT_GENERATE_SETTERS_COLLECTIONS);
         this.generateSettersForCollectionsButton.addSelectionListener(new SelectionListener() {
             public void widgetSelected(SelectionEvent e) {
                 update();
@@ -265,8 +264,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateSettersForCollectionsHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateSettersForCollectionsHelp"));
 
         // Generate advanced accessors for collections
         this.generateAdvancedAccessorsForCollectionsButton = new Button(comp, SWT.CHECK);
@@ -274,11 +273,10 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
         gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 1;
         this.generateAdvancedAccessorsForCollectionsButton.setLayoutData(gd);
-        this.generateAdvancedAccessorsForCollectionsButton
-                .setText(UML2JavaMessages
-                        .getString("UML2JavaClassLaunchConfigurationTab.GenerateAdvancedAccessorsForCollectionsLabel"));
-        this.generateAdvancedAccessorsForCollectionsButton
-                .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_ADVANCED_ACCESSORS_COLLECTIONS);
+        this.generateAdvancedAccessorsForCollectionsButton.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateAdvancedAccessorsForCollectionsLabel"));
+        this.generateAdvancedAccessorsForCollectionsButton.setSelection(
+                IUML2JavaConstants.Default.DEFAULT_GENERATE_ADVANCED_ACCESSORS_COLLECTIONS);
         this.generateAdvancedAccessorsForCollectionsButton.addSelectionListener(new SelectionListener() {
             public void widgetSelected(SelectionEvent e) {
                 update();
@@ -289,8 +287,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.GenerateAdvancedAccessorsForCollectionsHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.GenerateAdvancedAccessorsForCollectionsHelp"));
     }
 
     /**
@@ -303,8 +301,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
      */
     private void createDocumentationGroup(Composite composite, Font font) {
         GridData gd;
-        Group documentationGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.DocumentationGroupName"), 3, 1,
+        Group documentationGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.DocumentationGroupName"), 3, 1,
                 GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(documentationGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
@@ -356,8 +354,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
 
         // Copyright and license
         Label copyrightAndLicenseLabel = new Label(comp, SWT.NONE);
-        copyrightAndLicenseLabel.setText(UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.CopyrightAndLicenseLabel"));
+        copyrightAndLicenseLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.CopyrightAndLicenseLabel"));
 
         this.copyrightAndLicenseText = new Text(comp, SWT.MULTI | SWT.BORDER);
         this.copyrightAndLicenseText.setFont(composite.getFont());
@@ -372,8 +370,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaClassLaunchConfigurationTab.CopyrightAndLicenseHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaClassLaunchConfigurationTab.CopyrightAndLicenseHelp"));
     }
 
     /**
@@ -396,48 +394,48 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
         configuration.setAttribute(IUML2JavaConstants.PACKAGES_TO_IGNORE_DURING_GENERATION,
                 IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_GENERATION);
         if (this.packagesToIgnoreDuringTheGenerationText != null) {
-            this.packagesToIgnoreDuringTheGenerationText
-                    .setText(IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_GENERATION);
+            this.packagesToIgnoreDuringTheGenerationText.setText(
+                    IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_GENERATION);
         }
 
         // packages to ignore during the import computation
         configuration.setAttribute(IUML2JavaConstants.PACKAGES_TO_IGNORE_DURING_IMPORTS,
                 IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_IMPORTS);
         if (this.packagesToIgnoreDuringTheImportText != null) {
-            this.packagesToIgnoreDuringTheImportText
-                    .setText(IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_IMPORTS);
+            this.packagesToIgnoreDuringTheImportText.setText(
+                    IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_IMPORTS);
         }
 
         // generate getters and setters
         configuration.setAttribute(IUML2JavaConstants.GENERATE_GETTERS_AND_SETTERS,
                 IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_AND_SETTERS);
         if (this.generateGettersAndSettersButton != null) {
-            this.generateGettersAndSettersButton
-                    .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_AND_SETTERS);
+            this.generateGettersAndSettersButton.setSelection(
+                    IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_AND_SETTERS);
         }
 
         // generate getters for collections
         configuration.setAttribute(IUML2JavaConstants.GENERATE_GETTERS_COLLECTIONS,
                 IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_COLLECTIONS);
         if (this.generateGettersForCollectionsButton != null) {
-            this.generateGettersForCollectionsButton
-                    .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_COLLECTIONS);
+            this.generateGettersForCollectionsButton.setSelection(
+                    IUML2JavaConstants.Default.DEFAULT_GENERATE_GETTERS_COLLECTIONS);
         }
 
         // generate setters for collections
         configuration.setAttribute(IUML2JavaConstants.GENERATE_SETTERS_COLLECTIONS,
                 IUML2JavaConstants.Default.DEFAULT_GENERATE_SETTERS_COLLECTIONS);
         if (this.generateSettersForCollectionsButton != null) {
-            this.generateSettersForCollectionsButton
-                    .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_SETTERS_COLLECTIONS);
+            this.generateSettersForCollectionsButton.setSelection(
+                    IUML2JavaConstants.Default.DEFAULT_GENERATE_SETTERS_COLLECTIONS);
         }
 
         // generate advanced accessors for collections
         configuration.setAttribute(IUML2JavaConstants.GENERATE_ADVANCED_ACCESSORS_COLLECTIONS,
                 IUML2JavaConstants.Default.DEFAULT_GENERATE_ADVANCED_ACCESSORS_COLLECTIONS);
         if (this.generateAdvancedAccessorsForCollectionsButton != null) {
-            this.generateAdvancedAccessorsForCollectionsButton
-                    .setSelection(IUML2JavaConstants.Default.DEFAULT_GENERATE_ADVANCED_ACCESSORS_COLLECTIONS);
+            this.generateAdvancedAccessorsForCollectionsButton.setSelection(
+                    IUML2JavaConstants.Default.DEFAULT_GENERATE_ADVANCED_ACCESSORS_COLLECTIONS);
         }
 
         // author
@@ -474,8 +472,7 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
             this.packagesToIgnoreDuringTheGenerationText.setText(stringAttribute);
 
             // Packages to ignore during the imports
-            stringAttribute = configuration.getAttribute(
-                    IUML2JavaConstants.PACKAGES_TO_IGNORE_DURING_IMPORTS,
+            stringAttribute = configuration.getAttribute(IUML2JavaConstants.PACKAGES_TO_IGNORE_DURING_IMPORTS,
                     IUML2JavaConstants.Default.DEFAULT_PACKAGES_TO_IGNORE_DURING_IMPORTS);
             this.packagesToIgnoreDuringTheImportText.setText(stringAttribute);
 
@@ -540,8 +537,8 @@ public class UML2JavaClassLaunchConfigurationTab extends AbstractUML2JavaLaunchC
 
         // Generate getters and setters
         boolean generateGettersAndSetters = this.generateGettersAndSettersButton.getSelection();
-        configuration
-                .setAttribute(IUML2JavaConstants.GENERATE_GETTERS_AND_SETTERS, generateGettersAndSetters);
+        configuration.setAttribute(IUML2JavaConstants.GENERATE_GETTERS_AND_SETTERS,
+                generateGettersAndSetters);
 
         // Generate getters for collections
         boolean generateGettersForCollections = this.generateGettersForCollectionsButton.getSelection();

@@ -39,6 +39,7 @@ import org.eclipse.umlgen.gen.java.utils.IUML2JavaConstants;
  * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  * @since 2.0
  */
+@SuppressWarnings("restriction")
 public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLaunchConfigurationTab {
 
     /**
@@ -87,8 +88,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
      */
     private void createGenerationGroup(Composite composite, Font font) {
         GridData gd;
-        Group generationGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.GenerationGroupName"), 3, 1,
+        Group generationGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.GenerationGroupName"), 3, 1,
                 GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(generationGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
@@ -102,8 +103,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
 
         // Components to ignore during the generation
         Label componentsToIgnoreLabel = new Label(comp, SWT.NONE);
-        componentsToIgnoreLabel.setText(UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.ComponentToIgnoreLabel"));
+        componentsToIgnoreLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.ComponentToIgnoreLabel"));
 
         this.componentsToIgnoreText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.componentsToIgnoreText.setFont(composite.getFont());
@@ -118,19 +119,19 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.ComponentToIgnoreHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.ComponentToIgnoreHelp"));
 
         // Support component artifacts
         Label generateOSGiArtifactsLabel = new Label(comp, SWT.NONE);
-        generateOSGiArtifactsLabel.setText(UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.GenerateComponentArtifactsLabel"));
+        generateOSGiArtifactsLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.GenerateComponentArtifactsLabel"));
 
         componentArtifactsCombo = new Combo(comp, SWT.READ_ONLY);
         componentArtifactsCombo.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, true, false));
         componentArtifactsCombo.setItems(new String[] {
-        /* IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_OSGI, */
-        IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_ECLIPSE,
+                /* IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_OSGI, */
+                IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_ECLIPSE,
                 IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_JAVA, });
         componentArtifactsCombo.select(0);
         componentArtifactsCombo.addSelectionListener(new SelectionListener() {
@@ -144,8 +145,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.GenerateComponentArtifactsHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.GenerateComponentArtifactsHelp"));
 
     }
 
@@ -159,8 +160,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
      */
     private void createDocumentationGroup(Composite composite, Font font) {
         GridData gd;
-        Group generationGroup = createGroup(composite, UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.DocumentationGroupName"), 3, 1,
+        Group generationGroup = createGroup(composite, UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.DocumentationGroupName"), 3, 1,
                 GridData.FILL_HORIZONTAL);
         Composite comp = new Composite(generationGroup, SWT.NONE);
         GridLayout layout = new GridLayout(3, false);
@@ -174,8 +175,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
 
         // Bundle provider
         Label bundleProviderLabel = new Label(comp, SWT.NONE);
-        bundleProviderLabel.setText(UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.BundleProviderLabel"));
+        bundleProviderLabel.setText(UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.BundleProviderLabel"));
 
         this.bundleProviderNameText = new Text(comp, SWT.SINGLE | SWT.BORDER);
         this.bundleProviderNameText.setFont(composite.getFont());
@@ -190,8 +191,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
             }
         });
 
-        createHelpButton(comp, UML2JavaMessages
-                .getString("UML2JavaComponentLaunchConfigurationTab.BundleProviderHelp"));
+        createHelpButton(comp, UML2JavaMessages.getString(
+                "UML2JavaComponentLaunchConfigurationTab.BundleProviderHelp"));
     }
 
     /**
@@ -221,8 +222,8 @@ public class UML2JavaComponentLaunchConfigurationTab extends AbstractUML2JavaLau
         configuration.setAttribute(IUML2JavaConstants.COMPONENTS_ARCHITECTURE,
                 IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_ECLIPSE);
         if (this.componentArtifactsCombo != null) {
-            this.componentArtifactsCombo
-                    .setText(IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_ECLIPSE);
+            this.componentArtifactsCombo.setText(
+                    IUML2JavaConstants.Default.DEFAULT_COMPONENT_ARTIFACTS_TYPE_ECLIPSE);
         }
 
         // Bundle provider
