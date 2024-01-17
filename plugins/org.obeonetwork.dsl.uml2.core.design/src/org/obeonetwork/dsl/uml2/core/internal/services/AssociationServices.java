@@ -24,8 +24,8 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.EdgeTarget;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeListSpec;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
+import org.eclipse.sirius.diagram.model.business.internal.spec.DNodeListSpec;
+import org.eclipse.sirius.diagram.model.business.internal.spec.DNodeSpec;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
@@ -51,6 +51,7 @@ import com.google.common.collect.Lists;
  * @author Melanie Bats
  *         <a href="mailto:melanie.bats@obeo.fr">melanie.bats@obeo.fr</a>
  */
+@SuppressWarnings("restriction")
 public class AssociationServices {
 	/**
 	 * A singleton instance to be accessed by other java services.

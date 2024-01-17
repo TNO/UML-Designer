@@ -12,7 +12,7 @@ package org.obeonetwork.dsl.uml2.core.internal.commands;
 
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.diagram.business.internal.metamodel.description.spec.DiagramDescriptionSpec;
+import org.eclipse.sirius.diagram.model.business.internal.description.spec.DiagramDescriptionSpec;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -26,34 +26,34 @@ import org.eclipse.uml2.uml.UMLFactory;
 @SuppressWarnings("restriction")
 public class CreateStateMachineDiagram extends AbstractCreateDiagram<StateMachine> {
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected StateMachine createSemanticObject() {
-        return UMLFactory.eINSTANCE.createStateMachine();
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected StateMachine createSemanticObject() {
+		return UMLFactory.eINSTANCE.createStateMachine();
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected RepresentationDescription getDiagramDescription(Session session, StateMachine stateMachine) {
-        for (final RepresentationDescription representation : DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false), stateMachine)) {
-            if ("State Machine Diagram".equals(representation.getName()) //$NON-NLS-1$
-                    && representation instanceof DiagramDescriptionSpec) {
-                return representation;
-            }
-        }
-        return null;
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected RepresentationDescription getDiagramDescription(Session session, StateMachine stateMachine) {
+		for (final RepresentationDescription representation : DialectManager.INSTANCE.getAvailableRepresentationDescriptions(session.getSelectedViewpoints(false), stateMachine)) {
+			if ("State Machine Diagram".equals(representation.getName()) //$NON-NLS-1$
+					&& representation instanceof DiagramDescriptionSpec) {
+				return representation;
+			}
+		}
+		return null;
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected String getDiagramLabel(StateMachine stateMachine) {
-        return stateMachine.getName() + " " + "State Machine Diagram"; //$NON-NLS-1$ //$NON-NLS-2$
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected String getDiagramLabel(StateMachine stateMachine) {
+		return stateMachine.getName() + " " + "State Machine Diagram"; //$NON-NLS-1$ //$NON-NLS-2$
+	}
 
 }

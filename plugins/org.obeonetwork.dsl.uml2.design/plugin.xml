@@ -226,10 +226,6 @@ Contributors:
                   <iterate
                         ifEmpty="false"
                         operator="and">
-                     <test
-                           forcePluginActivation="true"
-                           property="org.obeonetwork.dsl.uml2.design.Extend">
-                     </test>
                      <instanceof
                            value="org.eclipse.uml2.uml.Package">
                      </instanceof>
@@ -238,6 +234,10 @@ Contributors:
                               value="org.eclipse.uml2.uml.Profile">
                         </instanceof>
                      </not>
+                     <test
+                           forcePluginActivation="true"
+                           property="org.obeonetwork.dsl.uml2.design.Extend">
+                     </test>
                   </iterate>
                </with>
             </enabledWhen>
@@ -435,13 +435,6 @@ Contributors:
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">
-      <definition
-            id="org.obeonetwork.dsl.uml2.design.DashboardsExistDefinition">
-         <test
-               forcePluginActivation="true"
-               property="org.obeonetwork.dsl.uml2.design.dashboardsExist">
-         </test>
-      </definition>
       <definition
             id="org.obeonetwork.dsl.uml2.design.UMLViewpointEnabledDefinition">
          <test

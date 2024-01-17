@@ -22,6 +22,7 @@ import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.Layer;
+import org.eclipse.sirius.diagram.model.business.internal.helper.ContentHelper;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Actor;
@@ -51,6 +52,7 @@ import com.google.common.base.Predicates;
  *
  * @author Bats Frederic <a href="mailto:frederic.bats@obeo.fr">frederic.bats@obeo.fr</a>
  */
+@SuppressWarnings("restriction")
 public class AddElementToDiagramServices {
 	/**
 	 * A singleton instance to be accessed by other java services.
@@ -85,13 +87,15 @@ public class AddElementToDiagramServices {
 
 		final ModelAccessor modelAccessor = session.getModelAccessor();
 
-		for (final DiagramElementMapping mapping : diagram.getDescription().getAllContainerMappings()) {
+		for (final DiagramElementMapping mapping : ContentHelper
+				.getAllContainerMappings(diagram.getDescription(), false)) {
 			final String domainClass = ((AbstractNodeMapping)mapping).getDomainClass();
 			if (modelAccessor.eInstanceOf(semanticElement, domainClass) && !mapping.isCreateElements()) {
 				mappings.add(mapping);
 			}
 		}
-		for (final DiagramElementMapping mapping : diagram.getDescription().getAllNodeMappings()) {
+		for (final DiagramElementMapping mapping : ContentHelper.getAllNodeMappings(diagram.getDescription(),
+				false)) {
 			final String domainClass = ((AbstractNodeMapping)mapping).getDomainClass();
 			if (modelAccessor.eInstanceOf(semanticElement, domainClass) && !mapping.isCreateElements()) {
 				mappings.add(mapping);
