@@ -1,0 +1,25 @@
+target "UML Designer Capella-2023-03"
+
+include "../org.obeonetwork.dsl.uml2.core.target/umlcoredesigner-capella-2023-03.tpd"
+with source, requirements
+
+location Amalgam-1.14.0 "https://download.eclipse.org/modeling/amalgam/updates/stable/1.14.0-S20230503/capella/" {
+	org.eclipse.amalgam.discovery.feature.group lazy
+	org.eclipse.amalgam.explorer.activity.feature.group lazy
+}
+
+// Acceleo 3.7.12
+location Acceleo-3.7.12 "http://download.eclipse.org/acceleo/updates/releases/3.7/R202211151354" {
+	org.eclipse.acceleo.feature.group lazy
+}
+
+// EMF compare 3.3.21
+location EMF-Compare-3.3.21 "https://download.eclipse.org/modeling/emf/compare/updates/releases/3.3/R202212280858/" {
+	org.eclipse.emf.compare.diagram.gmf.feature.group lazy
+	org.eclipse.emf.compare.ide.ui.feature.group lazy
+	org.eclipse.emf.compare.rcp.ui.feature.group lazy
+	org.eclipse.emf.compare.feature.group lazy
+	org.eclipse.emf.compare.uml2.feature.group lazy
+	org.eclipse.emf.compare.diagram.ide.ui.sirius lazy
+	org.eclipse.emf.compare.diagram.sirius lazy
+}

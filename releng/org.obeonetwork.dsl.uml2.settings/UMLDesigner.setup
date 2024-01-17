@@ -10,7 +10,7 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/pde/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/SetupWorkingSets.ecore"
     name="uml.designer"
     label="UML Designer">
   <setupTask
@@ -68,6 +68,9 @@
     <choice
         value="UML Designer Capella-1.3.0"
         label="umldesigner-capella-1.3.0"/>
+    <choice
+        value="UML Designer Capella-2023-03"
+        label="umldesigner-capella-2023-03"/>
     <description>Target Platform used for new install. You can then use another umldesigner_* predefined target platform existing in org.obeonetwork.dsl.uml2.target project.</description>
   </setupTask>
   <setupTask
@@ -116,6 +119,16 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/sp_cleanup.remove_unnecessary_casts"
           value="true"/>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.pde.api.tools">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.pde.api.tools/missing_default_api_profile"
+            value="Ignore">
+          <description>Ignore &quot;Plug-in Development/API Baselines&quot;</description>
+        </setupTask>
+      </setupTask>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -127,13 +140,55 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="org.eclipse.pde.api.tools">
+        name="org.eclipse.ui">
       <setupTask
           xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.pde.api.tools/missing_default_api_profile"
-          value="Ignore">
-        <description>Ignore &quot;Plug-in Development/API Baselines&quot;</description>
-      </setupTask>
+          key="/instance/org.eclipse.ui/defaultPerspectiveId"
+          value="org.eclipse.jdt.ui.JavaPerspective"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui/SHOW_MEMORY_MONITOR"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.editors">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/lineNumberRuler"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/printMargin"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/printMarginColumn"
+          value="120"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/spellingEnabled"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.ide">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.ide/WORKSPACE_NAME"
+          value="${scope.project.label} development"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wildwebdeveloper.xml">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wildwebdeveloper.xml/validation.noGrammar"
+          value="ignore"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wildwebdeveloper.xml/format.maxLineWidth"
+          value="512"/>
     </setupTask>
   </setupTask>
   <setupTask
@@ -218,6 +273,8 @@
         name="org.eclipse.emf.eef.sdk-feature.feature.group"/>
     <requirement
         name="org.eclipse.acceleo.feature.group"/>
+    <requirement
+        name="org.eclipse.m2e.feature.feature.group"/>
     <repository
         url="https://download.eclipse.org/cbi/tpd/3.0.0-SNAPSHOT/"/>
     <repository
