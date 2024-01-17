@@ -35,10 +35,11 @@ Require-Bundle: com.google.guava;bundle-version="[15.0.0,32.0.0)",
  org.obeonetwork.dsl.uml2.dashboard;bundle-version="[9.0.0,10.0.0)",
  org.obeonetwork.dsl.uml2.core.design
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin
 Bundle-Vendor: Obeo Network
 Export-Package: org.obeonetwork.dsl.uml2.design;x-friends:="org.obeonetwork.dsl.uml2.usage",
  org.obeonetwork.dsl.uml2.design.api.services,
  org.obeonetwork.dsl.uml2.design.api.utils,
  org.obeonetwork.dsl.uml2.design.internal.services;x-friends:="org.obeonetwork.dsl.uml2.design.tests"
+Automatic-Module-Name: org.obeonetwork.dsl.uml2.design

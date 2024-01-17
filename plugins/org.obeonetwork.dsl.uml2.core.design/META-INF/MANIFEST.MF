@@ -4,7 +4,7 @@ Bundle-Name: UML Designer Core
 Bundle-SymbolicName: org.obeonetwork.dsl.uml2.core.design;singleton:=true
 Bundle-Version: 9.0.0.qualifier
 Bundle-Activator: org.obeonetwork.dsl.uml2.core.UMLDesignerCorePlugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.sirius;bundle-version="[7.0.0,8.0.0)",
  org.eclipse.uml2.uml;bundle-version="[5.0.0,6.0.0)",
@@ -52,3 +52,4 @@ Export-Package: org.obeonetwork.dsl.uml2.core,
  org.obeonetwork.dsl.uml2.core.wizard
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Obeo
+Automatic-Module-Name: org.obeonetwork.dsl.uml2.core.design

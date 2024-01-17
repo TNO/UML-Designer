@@ -11,8 +11,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;bundle-version="3.8.1",
  com.google.guava;bundle-version="15.0.0",
  org.obeonetwork.dsl.uml2.design;bundle-version="9.0.0"
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: lib/JGoogleAnalyticsTracker-1.2.1-SNAPSHOT-jar-with-dependencies.jar,
  .
 Export-Package: org.obeonetwork.dsl.uml2.usage.preferences
+Automatic-Module-Name: org.obeonetwork.dsl.uml2.usage
