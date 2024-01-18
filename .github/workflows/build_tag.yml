@@ -40,4 +40,4 @@ jobs:
       with:
         files: |
           packaging/org.obeonetwork.dsl.uml2.product/target/products/UMLDesigner-*.*
-          pages.tar.gz
+          UMLDesigner-pages.tar.gz
