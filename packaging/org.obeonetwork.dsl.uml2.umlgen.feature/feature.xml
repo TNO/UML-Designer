@@ -216,13 +216,10 @@ Each party waives its rights to a jury trial in any resulting
 litigation.
    </license>
 
-   <includes
-         id="org.eclipse.uml2"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.acceleo"
-         version="0.0.0"/>
+   <requires>
+      <import feature="org.eclipse.acceleo" version="3.7.0" match="compatible"/>
+      <import feature="org.eclipse.uml2" version="5.0.0" match="compatible"/>
+   </requires>
 
    <plugin
          id="org.eclipse.umlgen.gen.java"

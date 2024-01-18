@@ -15,26 +15,12 @@
    <feature id="org.obeonetwork.dsl.uml2.umlgen.feature" version="0.0.0">
       <category name="Obeo Network"/>
    </feature>
-   <feature url="features/org.obeonetwork.dsl.uml2.core.runtime.feature_9.0.0.qualifier.jar" id="org.obeonetwork.dsl.uml2.core.runtime.feature" version="9.0.0.qualifier">
-      <category name="Obeo Network Core"/>
-   </feature>
-   <feature id="org.obeonetwork.gmf.runtime.diagram.ui.extension.feature" version="0.0.0">
-      <category name="Obeo Network Core"/>
-   </feature>
-   <feature id="org.obeonetwork.dsl.uml2.discovery.feature" version="0.0.0">
-      <category name="Obeo Network Discovery"/>
-   </feature>
    <category-def name="Obeo Network" label="Obeo Network">
       <description>
          The Obeo Network.
       </description>
    </category-def>
-   <category-def name="Obeo Network Core" label="Core">
-      <category name="Obeo Network"/>
-   </category-def>
-   <category-def name="Obeo Network Discovery" label="Discovery">
-      <category name="Obeo Network"/>
-   </category-def>
    <repository-reference location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.14.0-S20230503/capella/" enabled="true" />
    <repository-reference location="https://download.eclipse.org/sirius/updates/releases/7.2.0/2023-03/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/modeling/emft/eef/updates/releases/1.5/R201601141612" enabled="true" />
 </site>
