@@ -224,7 +224,8 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.umldesigner.ui.tests"
-      remoteURI="ObeoNetwork/UML-Designer-UI-Tests">
+      remoteURI="ObeoNetwork/UML-Designer-UI-Tests"
+      checkoutBranch="master">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
