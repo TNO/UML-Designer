@@ -22,14 +22,14 @@ jobs:
       uses: s4u/setup-maven-action@v1.11.0
       with:
         java-version: '17'
-        distribution: 'temurin'
+        java-distribution: 'temurin'
         maven-version: '3.9.5'
     - name: Build uml designer
       run: mvn clean verify --batch-mode --update-snapshots --fail-at-end --file pom.xml
     - name: Build uml designer products
       run: mvn clean verify  --batch-mode --update-snapshots --fail-at-end --file releng/org.obeonetwork.dsl.uml2.product.parent/pom.xml
     - name: Prepare deployment
-      run: ./prepare-deploy-local-dir.sh pages
+      run: ./prepare-deploy-local-dir.sh pages && tar czvf UMLDesigner-pages.tar.gz pages
     - name: Attach Test Report
       if: success() || failure()
       uses: scacap/action-surefire-report@v1
