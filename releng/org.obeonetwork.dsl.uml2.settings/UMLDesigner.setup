@@ -63,7 +63,7 @@
       xsi:type="setup:VariableTask"
       id="umldesigner.target.platform"
       name="umldesigner.target.platform"
-      defaultValue="UML Designer Capella-1.3.0"
+      defaultValue="UML Designer Capella-2023-03"
       label="Target Platform - Uml Designer">
     <choice
         value="UML Designer Capella-1.3.0"
@@ -430,18 +430,21 @@
       name="${umldesigner.target.platform}">
     <description>Target Platform used for the new install. It should be one of the available predefined TP in project org.obeonetwork.dsl.uml2.target.</description>
   </setupTask>
+  <stream name="capella-2023-03"
+      label="Capella 2023-03">
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Doomph.redirection.umldesigner.tno.git"
+        value="=https://raw.githubusercontent.com/TNO/UML-Designer/capella-2023-03/releng/org.obeonetwork.dsl.uml2.settings/UMLDesigner.setup->${git.clone.umldesigner.location|uri}/releng/org.obeonetwork.dsl.uml2.settings/UMLDesigner.setup"
+        vm="true">
+      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
+    </setupTask>
+  </stream>
   <stream name="master">
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.umldesigner.git"
         value="=https://raw.githubusercontent.com/ObeoNetwork/UML-Designer/master/releng/org.obeonetwork.dsl.uml2.settings/UMLDesigner.setup->${git.clone.umldesigner.location|uri}/releng/org.obeonetwork.dsl.uml2.settings/UMLDesigner.setup"
-        vm="true">
-      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.umldesigner.tno.git"
-        value="=https://raw.githubusercontent.com/TNO/UML-Designer/master/releng/org.obeonetwork.dsl.uml2.settings/UMLDesigner.setup->${git.clone.umldesigner.location|uri}/releng/org.obeonetwork.dsl.uml2.settings/UMLDesigner.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>
