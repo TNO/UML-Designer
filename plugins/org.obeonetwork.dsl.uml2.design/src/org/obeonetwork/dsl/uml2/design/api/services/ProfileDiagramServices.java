@@ -863,6 +863,10 @@ public class ProfileDiagramServices extends AbstractDiagramServices {
 
 			if (initParameters(rootProfile) == IDialogConstants.OK_ID
 					&& ProfileServices.INSTANCE.defineAllProfiles(rootProfile)) {
+				// FIX : Moved - save IFile here, will be null later on...
+				final IFile rootProfileIFile = GenericUMLProfileTools
+						.resourceToIFile(rootProfile.eResource());
+
 				GenericUMLProfileTools.save(rootProfile);
 				final IProject profilePlugin = createPluginProjectWithProgress(profilePluginName);
 
@@ -880,8 +884,9 @@ public class ProfileDiagramServices extends AbstractDiagramServices {
 				final IFile profileCopyIFile = modelFolder.getFile(profileName + "." //$NON-NLS-1$
 						+ UMLResource.FILE_EXTENSION);
 
-				final IFile rootProfileIFile = GenericUMLProfileTools
-						.resourceToIFile(rootProfile.eResource());
+				// FIX : Moved up
+				// final IFile rootProfileIFile = GenericUMLProfileTools
+				// 		.resourceToIFile(rootProfile.eResource());
 				try {
 					rootProfileIFile.copy(profileCopyIFile.getFullPath(), true, new NullProgressMonitor());
 				} catch (final CoreException e) {
