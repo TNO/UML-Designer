@@ -1,3 +1,8 @@
 # Don't convert line endings in this branch
 # The extracted website archives should be kept as is
-* binary
+*	binary
+
+# Except for these known files
+.gitattributes	text=auto
+index.md		text=auto
+README.textile	text=auto
