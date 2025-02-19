@@ -11,6 +11,9 @@ name: Build and Test UML Designer
 on:
   push:
     branches: [ "capella-2023-03" ]
+  pull_request:
+    branches: [ "capella-2023-03" ]
+
 
 jobs:
   build:
@@ -34,7 +37,7 @@ jobs:
       if: success() || failure()
       uses: scacap/action-surefire-report@v1
     - name: Attach Pages
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: UMLDesigner-pages
         path: pages
