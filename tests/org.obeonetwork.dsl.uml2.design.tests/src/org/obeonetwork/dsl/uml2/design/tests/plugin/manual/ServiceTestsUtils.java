@@ -36,17 +36,19 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 public class ServiceTestsUtils {
-	private static final String VP_EXTEND = "Extend";
+	public static final String VP_EXTEND = "Extend";
 
-	private static final String VP_REUSED = "Reused";
+	public static final String VP_REUSED = "Reused";
 
-	private static final String VP_REVIEW = "Review";
+	public static final String VP_REVIEW = "Review";
 
-	private static final String VP_DESIGN = "Design";
+	public static final String VP_DESIGN = "Design";
 
-	private static final String VP_CAPTURE = "Capture";
+	public static final String VP_CAPTURE = "Capture";
 
-	private static final String UML_VP_URI = "viewpoint:/org.obeonetwork.dsl.uml2.design/";
+	public static final String UML_VP_URI = "viewpoint:/org.obeonetwork.dsl.uml2.design/";
+
+	public static final String UML_CORE_VP_URI = "viewpoint:/org.obeonetwork.dsl.uml2.core.design/";
 
 	public static Set<String> acceleoWhiteList = Sets.newHashSet("->", "eContainer", "toLowerFirst",
 			"toUpperFirst", "not", "eClass", "eAllContents", "eContents", "equalsIgnoreCase");
