@@ -1,0 +1,62 @@
+target "UML Core Designer for Capella 2023-03"
+with source, requirements
+
+// Make sure that GMF, GEF below are consistent with the GMF used by Sirius
+//include "https://download.eclipse.org/sirius/updates/releases/7.2.0/2023-03/targets/capella/sirius_2023-03.targetplatform"
+
+location Eclipse-2023-03 "https://download.eclipse.org/releases/2023-03/" {
+	com.google.guava lazy
+	org.eclipse.emf.common.feature.group lazy
+	org.eclipse.emf.ecore.feature.group lazy
+	org.eclipse.emf.edit.feature.group lazy
+	org.eclipse.emf.feature.group lazy
+	org.eclipse.emf.mwe.sdk.feature.group lazy
+	org.eclipse.emf.mwe2.language.sdk.feature.group lazy
+	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.emf.transaction.feature.group lazy
+	org.eclipse.emf.transaction.sdk.feature.group lazy
+	org.eclipse.emf.validation.sdk.feature.group lazy
+	org.eclipse.emf.workspace.feature.group lazy
+	org.eclipse.equinox.sdk.feature.group lazy
+	org.eclipse.ocl.all.feature.group lazy
+	org.eclipse.ocl.core.sdk.feature.group lazy
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.sdk.feature.group lazy
+	org.eclipse.uml2.sdk.feature.group lazy
+	org.eclipse.xtend.sdk.feature.group lazy
+	org.eclipse.xtext.sdk.feature.group lazy
+}
+
+location EEF-1.5 "https://download.eclipse.org/modeling/emft/eef/updates/releases/1.5/R201601141612" {
+        org.eclipse.emf.eef.runtime lazy
+}
+
+location GMF-Notation-1.13.1 "https://download.eclipse.org/modeling/gmp/gmf-notation/updates/releases/R202211151334" {
+    org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
+}
+
+location GMF-Runtime-1.15.3 "https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R202211041032/" {
+    org.eclipse.gmf.runtime.sdk.feature.group lazy
+    org.eclipse.gmf.runtime.thirdparty.feature.group lazy
+}
+
+location GEF-Classic  "https://download.eclipse.org/tools/gef/classic/releases/3.15.0" {
+    org.eclipse.gef.feature.group lazy
+    org.eclipse.gef.sdk.feature.group lazy
+    org.eclipse.draw2d.sdk.feature.group lazy
+}
+
+// Sirius
+location Sirius-7.2.0 "https://download.eclipse.org/sirius/updates/releases/7.2.0/2023-03/" {
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.group lazy
+	org.eclipse.sirius.properties.feature.feature.group lazy
+	//IDE
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.tests.support.feature.group lazy
+	org.eclipse.sirius.aql.feature.group lazy
+}
