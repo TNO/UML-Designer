@@ -11,6 +11,9 @@
 package org.obeonetwork.dsl.uml2.design.tests.plugin.manual;
 
 import static org.junit.Assert.fail;
+import static org.obeonetwork.dsl.uml2.design.tests.plugin.manual.ServiceTestsUtils.UML_CORE_VP_URI;
+import static org.obeonetwork.dsl.uml2.design.tests.plugin.manual.ServiceTestsUtils.VP_DESIGN;
+import static org.obeonetwork.dsl.uml2.design.tests.plugin.manual.ServiceTestsUtils.VP_REUSED;
 
 import java.lang.reflect.Method;
 import java.util.Collection;
@@ -39,8 +42,6 @@ public class ServiceExpressionDesignViewpointTests {
 		this.underTest = expression;
 	}
 
-	private final static String VP_NAME = "Design";
-
 	@Parameters
 	public static Collection<Object[]> data() {
 		List<Object[]> parameters = Lists.newArrayList();
@@ -48,14 +49,17 @@ public class ServiceExpressionDesignViewpointTests {
 		// Get all declared services
 
 		Set<Method> allDeclaredMethods = new HashSet<Method>();
-		ServiceTestsUtils.collectServicesFromUmlDesignerViewpoint(allDeclaredMethods, VP_NAME);
+		ServiceTestsUtils.collectServicesFromUmlDesignerViewpoint(allDeclaredMethods, VP_DESIGN);
+		// Bugfix: the design viewpoint includes the core.reused viewpoint
+		ServiceTestsUtils.collectServicesFromDesignerViewpoint(allDeclaredMethods, VP_REUSED,
+				UML_CORE_VP_URI);
 		for (Method method : allDeclaredMethods) {
 			allServices.add(method.getName());
 		}
 
 		// Get all services called from interpreted expressions
 		Set<InterpretedExpression> allServiceExpressions = new HashSet<InterpretedExpression>();
-		ServiceTestsUtils.collectServiceExpressionFromUmlDesignerViewpoint(allServiceExpressions, VP_NAME);
+		ServiceTestsUtils.collectServiceExpressionFromUmlDesignerViewpoint(allServiceExpressions, VP_DESIGN);
 		for (InterpretedExpression interpretedExpression : allServiceExpressions) {
 			parameters.add(new Object[] {interpretedExpression});
 		}

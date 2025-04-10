@@ -4583,7 +4583,6 @@
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.uml2.design.api.services.StateMachineDiagramServices"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.uml2.design.api.services.SequenceDiagramServices"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.uml2.design.api.services.ConstraintServices"/>
-    <ownedJavaExtensions qualifiedClassName="org.obeonetwork.dsl.uml2.design.api.services.ReusedDescriptionServices"/>
   </ownedViewpoints>
   <ownedViewpoints endUserDocumentation="To document, get some overview and metrics of the application." name="Review" label="Review" modelFileExtension="uml">
     <ownedRepresentations xsi:type="description_3:EditionTableDescription" name="Documentation Table" titleExpression="aql:self.oclAsType(uml::NamedElement).name +' Documentation Table'" domainClass="uml.Package">
