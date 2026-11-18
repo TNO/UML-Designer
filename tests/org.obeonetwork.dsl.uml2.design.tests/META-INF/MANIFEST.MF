@@ -31,5 +31,19 @@ Require-Bundle: org.eclipse.core.runtime,
  org.obeonetwork.dsl.uml2.core.design
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
-Export-Package: org.obeonetwork.dsl.uml2.design.tests.plugin.manual
+Export-Package: org.obeonetwork.dsl.uml2.design.tests;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.automation;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.common;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.contexts;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.plugin;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.plugin.manual,
+ org.obeonetwork.dsl.uml2.design.tests.plugin.manual.services;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.plugin.manual.services.compositestructure;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit.features;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit.manual;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit.stories;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit.stories.dropelement;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit.stories.editlabels;x-internal:=true,
+ org.obeonetwork.dsl.uml2.design.tests.unit.stories.manageactivity;x-internal:=true
 Automatic-Module-Name: org.obeonetwork.dsl.uml2.design.tests

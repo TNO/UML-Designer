@@ -13,6 +13,12 @@ Bundle-Activator: org.obeonetwork.gmf.runtime.diagram.ui.extension.ExtensionActi
 Bundle-Vendor: Obeo Network
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable,org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.editPart,org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.figure,org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.provider
+Export-Package: org.obeonetwork.gmf.runtime.diagram.ui.extension;x-internal:=true,
+ org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable,
+ org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.editPart,
+ org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.editPart.listener;x-internal:=true,
+ org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.figure,
+ org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.figure.listener;x-internal:=true,
+ org.obeonetwork.gmf.runtime.diagram.ui.extension.rotatable.provider
 Automatic-Module-Name: org.obeonetwork.gmf.runtime.diagram.ui.extension
 Bundle-ManifestVersion: 2

@@ -13,3 +13,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Obeo Network
 Automatic-Module-Name: org.obeonetwork.dsl.uml2.discovery
+Export-Package: org.obeonetwork.dsl.uml2.discovery;x-internal:=true,
+ org.obeonetwork.dsl.uml2.discovery.handlers;x-internal:=true

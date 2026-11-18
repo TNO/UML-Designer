@@ -41,5 +41,6 @@ Bundle-Vendor: Obeo Network
 Export-Package: org.obeonetwork.dsl.uml2.design;x-friends:="org.obeonetwork.dsl.uml2.usage",
  org.obeonetwork.dsl.uml2.design.api.services,
  org.obeonetwork.dsl.uml2.design.api.utils,
+ org.obeonetwork.dsl.uml2.design.api.wizards;x-internal:=true,
  org.obeonetwork.dsl.uml2.design.internal.services;x-friends:="org.obeonetwork.dsl.uml2.design.tests"
 Automatic-Module-Name: org.obeonetwork.dsl.uml2.design

@@ -16,7 +16,17 @@ Require-Bundle: org.eclipse.ui,
  com.google.guava;bundle-version="[15.0.0,34.0.0)",
  org.eclipse.sirius.ext.base;bundle-version="[7.0.0,8.0.0)",
  org.eclipse.core.expressions
-Export-Package: org.obeonetwork.dsl.uml2.dashboard.services
+Export-Package: org.obeonetwork.dsl.uml2.dashboard;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.activities.capture;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.activities.design;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.activities.extend;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.activities.help;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.activities.review;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.commands;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.listeners;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.predicates;x-internal:=true,
+ org.obeonetwork.dsl.uml2.dashboard.services,
+ org.obeonetwork.dsl.uml2.dashboard.testers;x-internal:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.obeonetwork.dsl.uml2.dashboard

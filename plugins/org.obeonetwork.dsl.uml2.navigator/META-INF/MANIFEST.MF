@@ -21,3 +21,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.sirius.business.api.session
 Automatic-Module-Name: org.obeonetwork.dsl.uml2.navigator
+Export-Package: org.obeonetwork.dsl.uml2.navigator;x-internal:=true

@@ -22,3 +22,10 @@ Require-Bundle: org.eclipse.core.resources,
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
+Export-Package: org.eclipse.umlgen.gen.java.ui;x-internal:=true,
+ org.eclipse.umlgen.gen.java.ui.common;x-internal:=true,
+ org.eclipse.umlgen.gen.java.ui.handler;x-internal:=true,
+ org.eclipse.umlgen.gen.java.ui.launch;x-internal:=true,
+ org.eclipse.umlgen.gen.java.ui.launch.tabs;x-internal:=true,
+ org.eclipse.umlgen.gen.java.ui.properties;x-internal:=true,
+ org.eclipse.umlgen.gen.java.ui.utils;x-internal:=true
